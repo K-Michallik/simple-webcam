@@ -1,0 +1,15 @@
+metadata:
+  vendorID: "urcaps-r-us"
+  urcapID: "simple-webcam"
+  vendorName: "urcaps-r-us"
+  urcapName: "Simple-Webcam"
+  version: 1.0.0
+artifacts:
+  webArchives:
+  - id: "simple-webcam-frontend"
+    folder: "simple-webcam-frontend"
+  containers:
+  - id: "simple-webcam-backend"
+    image: "simple-webcam-backend:latest"
+    devices:
+      - type: video

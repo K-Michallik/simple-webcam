@@ -1,0 +1,68 @@
+@import '../../../styles.scss';
+
+.component {
+  .section {
+    padding: 0.5rem;
+  }
+
+  .content-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; /* Center items vertically */
+    flex-wrap: wrap;
+  }
+
+  .webcam-section,
+  .snapshot-section {
+    flex: 0 0 45%;
+    max-width: 550px;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;          
+    flex-direction: column; 
+    align-items: center;    
+    justify-content: center;
+  }
+
+  .snapshot-section {
+    text-align: center;
+
+    h2 {
+      margin-top: 0;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  .actionBtn {
+    margin: 5px;
+    font-size: 1em;
+  }
+
+  .button-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .actionBtn {
+      margin: 0 5px;
+    }
+  }
+
+  h1,
+  h2,
+  h4 {
+    font-size: 1.5em;
+  }
+
+  .error-message {
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+}

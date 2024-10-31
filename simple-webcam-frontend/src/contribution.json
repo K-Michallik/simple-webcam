@@ -1,0 +1,21 @@
+{
+  "applicationNodes": [
+    {
+      "translationPath": "assets/i18n/",
+      "behaviorURI": "webcam-application-node.worker.js",
+      "presenterURI": "main.js",
+      "componentTagName": "urcaps-r-us-simple-webcam-webcam-application-node"
+    }
+  ],
+  "programNodes": [
+    {
+      "excludeFromToolbox": false,
+      "translationPath": "assets/i18n/",
+      "iconURI": "assets/icons/webcam-program-node.svg",
+      "behaviorURI": "webcam-program-node.worker.js",
+      "presenterURI": "main.js",
+      "componentTagName": "urcaps-r-us-simple-webcam-webcam-program-node"
+    }
+  ],
+  "smartSkills": []
+}

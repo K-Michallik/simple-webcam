@@ -1,0 +1,17 @@
+{
+  "program": {
+    "tree": {
+      "nodes": {
+        "urcaps-r-us-simple-webcam-webcam-program-node": "Webcam Program Node"
+      }
+    }
+  },
+  "application": {
+    "nodes": {
+      "urcaps-r-us-simple-webcam-webcam-application-node": {
+        "title": "Webcam Application Node",
+        "supportiveText": "Webcam Application Node - Supportive Text"
+      }
+    }
+  }
+}

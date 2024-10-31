@@ -1,0 +1,45 @@
+@if (applicationNode) {
+  <div *ngIf="applicationNode" class="component">
+    <div class="section">
+      <div class="content-container">
+        <!-- Webcam and buttons section -->
+        <div class="webcam-section">
+          <!-- Webcam component -->
+          @if (showWebcam) {
+            <webcam
+            [height]="350"
+            [width]="350"
+            [trigger]="triggerObservable"
+            (imageCapture)="handleImage($event)"
+            *ngIf="showWebcam"
+            [videoOptions]="videoOptions"
+            [imageQuality]="1"
+            (initError)="handleInitError($event)"
+          ></webcam>
+          }
+          <!-- Buttons -->
+          <div class="button-row">
+            <ur-button (handleClick)="triggerSnapshot();">Take A Snapshot</ur-button>
+            <ur-button (handleClick)="toggleWebcam();">Toggle Webcam</ur-button>
+          </div>
+        </div>
+  
+        <!-- Snapshot section -->
+        @if (webcamImage) {
+          <div class="snapshot-section">
+            <h2>Nice one!</h2>
+            <img [src]="webcamImage.imageAsDataUrl" />
+          </div>
+        }
+      </div>
+      <!-- Messages and links -->
+       @if (error) {
+        <div class="error-message">
+            <h4>Error:</h4>
+            <p>{{ error.message }}</p>
+        </div>
+       }
+    </div>
+  </div>
+}
+
