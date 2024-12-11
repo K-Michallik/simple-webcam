@@ -4,9 +4,10 @@ WORKDIR /app
 
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
-RUN ln -s /src/on_device_add.py /on_device_add
 
 COPY src/ .
+RUN chmod +x /app/src/on_device_add.py
+RUN ln -s /app/src/on_device_add.py /on_device_add
 
 EXPOSE 50052
 
