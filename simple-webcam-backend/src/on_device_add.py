@@ -9,6 +9,15 @@ import os
 import sys
 import requests
 from argparse import ArgumentParser
+import logging
+
+# Configure logging for on_device_add
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    handlers=[logging.StreamHandler(sys.stdout)]
+)
+logger = logging.getLogger(__name__)
 
 parser = ArgumentParser()
 parser.add_argument("json_payload", help="JSON payload containing device add information")
@@ -29,7 +38,7 @@ def send_device_data_to_server(payload: dict, port: int) -> int:
         response.raise_for_status()  # Raise an exception for HTTP errors
         return response.json().get("exit_code", 1)  # Default to 1 if exit_code not in response
     except requests.RequestException as e:
-        print(f"Error communicating with server: {e}", file=sys.stderr)
+        logger.error(f"Error communicating with server: {e}", file=sys.stderr)
         return 1  # Reject device on communication failure
 
 if __name__ == "__main__":
