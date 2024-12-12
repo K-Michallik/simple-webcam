@@ -5,9 +5,16 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY src/ .
-RUN chmod +x /app/src/on_device_add.py
-RUN ln -s /app/src/on_device_add.py /on_device_add
+COPY src/ /app/src/
+
+# Set PYTHONPATH to include /app/src
+ENV PYTHONPATH=/app/src
+
+# Make device handling scripts executable and add symlinks
+RUN chmod +x /app/src/on_device_add.py && \
+    chmod +x /app/src/on_device_remove.py
+RUN ln -s /app/src/on_device_add.py /on_device_add && \
+    ln -s /app/src/on_device_remove.py /on_device_remove
 
 EXPOSE 50052
 

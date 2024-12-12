@@ -22,9 +22,9 @@ def send_device_data_to_server(payload: dict, port: int) -> int:
     """
     try:
         response = requests.post(
-            url=f"http://localhost:{port}/device_add",
+            url=f"http://localhost:{port}/device_remove",
             json=payload,
-            timeout=5
+            timeout=5  
         )
         response.raise_for_status()  # Raise an exception for HTTP errors
         return response.json().get("exit_code", 1)  # Default to 1 if exit_code not in response
