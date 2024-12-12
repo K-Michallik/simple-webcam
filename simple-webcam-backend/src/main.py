@@ -68,7 +68,7 @@ async def device_add(payload: DevicePayload):
         logging.error(f"Error processing payload: {e}")
         raise HTTPException(status_code=400, detail="Invalid payload")
 
-@app.post("device_remove")
+@app.post("/device_remove")
 async def device_remove(payload: DevicePayload):
     try:
         # Log the validated payload
