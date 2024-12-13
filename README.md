@@ -43,8 +43,8 @@ This sample provides a practical way to manage USB devices like webcams using a 
 
 3. **Frontend Integration**:
 
-   - A toggle button in the frontend lets users enable or disable the webcam feed.
-   - Clicking the button sends a request to the backend to update the webcam's state.
+   - A toggle button lets users enable or disable the webcam feed.
+   - Users can also take a snapshot which is displayed next to the active webcam feed.
 
 
 ## **API Endpoints**
@@ -98,8 +98,8 @@ This sample provides a practical way to manage USB devices like webcams using a 
 Each component uses logging to keep track of events and actions:
 
 - **`main.py`**: Logs device decisions and frontend requests.
-- **`on_device_add.py`**: Logs initialization and device addition processing.
-- **`on_device_remove.py`**: Logs initialization and device removal events.
+- **`on_device_add.py`**: Logs initialization and device addition processing [currently not used]
+- **`on_device_remove.py`**: Logs initialization and device removal events. [currently not used]
 
 ### Example Logs:
 
@@ -132,9 +132,4 @@ Get more help from the included SDK documentation.
 
 This project is released under the MIT License. See the [LICENSE](LICENSE) file for details.
 
----
-
-## **How to Contribute**
-
-We encourage contributions! Please fork the repository, make your changes, and submit a pull request.
 
